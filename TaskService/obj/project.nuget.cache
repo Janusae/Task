@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "ifEbIUn/ZBM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Mohammad\\source\\repos\\TaskManagement\\TaskService\\TaskService.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.6\\microsoft.aspnetcore.openapi.9.0.6.nupkg.sha512",
+    "C:\\Users\\Mohammad\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "C:\\Users\\Mohammad\\source\\repos\\TaskManagement\\TaskService\\TaskService.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\Mohammad\\source\\repos\\TaskManagement\\TaskService\\TaskService.csproj",
+      "targetGraphs": []
+    }
+  ]
+}

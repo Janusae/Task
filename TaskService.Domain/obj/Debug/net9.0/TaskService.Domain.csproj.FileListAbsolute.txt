@@ -1,0 +1,12 @@
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\bin\Debug\net9.0\TaskService.Domain.deps.json
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\bin\Debug\net9.0\TaskService.Domain.dll
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\bin\Debug\net9.0\TaskService.Domain.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.AssemblyInfoInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.AssemblyInfo.cs
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.sourcelink.json
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.dll
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\refint\TaskService.Domain.dll
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\TaskService.Domain.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\TaskService.Domain\obj\Debug\net9.0\ref\TaskService.Domain.dll

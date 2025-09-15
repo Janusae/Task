@@ -1,0 +1,16 @@
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\bin\Debug\net9.0\UserService.Infrastructure.deps.json
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\bin\Debug\net9.0\UserService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\bin\Debug\net9.0\UserService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\bin\Debug\net9.0\UserService.Domain.dll
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\bin\Debug\net9.0\UserService.Domain.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.AssemblyInfo.cs
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserServ.28B62BA0.Up2Date
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\refint\UserService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\ref\UserService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\UserService.Infrastructure\obj\Debug\net9.0\UserService.Infrastructure.sourcelink.json

@@ -1,0 +1,16 @@
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\bin\Debug\net9.0\TaskService.Infrastructure.deps.json
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\bin\Debug\net9.0\TaskService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\bin\Debug\net9.0\TaskService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\bin\Debug\net9.0\TaskService.Domain.dll
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\bin\Debug\net9.0\TaskService.Domain.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.AssemblyInfo.cs
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.sourcelink.json
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskServ.7602B35C.Up2Date
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\refint\TaskService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\TaskService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\BookService.Infrastructure\obj\Debug\net9.0\ref\TaskService.Infrastructure.dll
