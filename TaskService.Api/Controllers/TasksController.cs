@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TaskService.Application.CQRS.Command.Tasks;
+using TaskService.Application.Dto;
 
 namespace TaskService.Api.Controllers
 {
@@ -22,15 +23,17 @@ namespace TaskService.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public async Task<ActionResult> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await _mediator.Send(new GetTaskByIdQuery {Id=id });
+            return Ok(result);
         }
 
         [HttpPost]
-        public IActionResult Create([FromBody] object request)
+        public async Task<IActionResult> Create([FromBody] CreateTaskDto request)
         {
-            throw new NotImplementedException();
+            var result = await _mediator.Send(new CreateTaskQuery { CreateUserDto = request });
+            return Ok(result);
         }
 
         [HttpPut("{id}")]

@@ -1,44 +1,40 @@
-﻿//using MediatR;
-//using Microsoft.EntityFrameworkCore;
-//using UserService.Application.Dto;
-//using UserService.Domain.DB.Sql;
-//using UserService.Infrastructure.DbContexts;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using TaskService.Application.Dto;
+using TaskService.Infrastructure.DbContexts;
 
-//namespace TaskService.Application.CQRS.Command.Tasks
-//{
-//    public class GetUserByIdQuery : IRequest<UserDto>
-//    {
-//        public Guid Id { get; set; }
-//    }
-//    public class GetUserByIdQueryHandler : IRequestHandler<GetUserByIdQuery, UserDto?>
-//    {
-//        private readonly ProgramDbContext _dbContext;
+namespace TaskService.Application.CQRS.Command.Tasks
+{
+    public class GetTaskByIdQuery : IRequest<TaskDto>
+    {
+        public Guid Id { get; set; }
+    }
+    public class GetTaskByIdQueryHandler : IRequestHandler<GetTaskByIdQuery, TaskDto?>
+    {
+        private readonly ProgramDbContext _dbContext;
 
-//        public GetUserByIdQueryHandler(ProgramDbContext dbContext)
-//        {
-//            _dbContext = dbContext;
-//        }
+        public GetTaskByIdQueryHandler(ProgramDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
-//        public async Task<UserDto?> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
-//        {
-//            var user = await _dbContext.Users
-//                .Include(u => u.Profile)
-//                .AsNoTracking()
-//                .FirstOrDefaultAsync(u => u.Id == request.Id, cancellationToken);
+        public async Task<TaskDto?> Handle(GetTaskByIdQuery request, CancellationToken cancellationToken)
+        {
+            var user = await _dbContext.Tasks
+                .AsNoTracking()
+                .FirstOrDefaultAsync(u => u.Id == request.Id, cancellationToken);
 
-//            if (user == null) return null;
+            if (user == null) return null;
 
-//            return new UserDto
-//            {
-//                Id = user.Id,
-//                UserName = user.UserName,
-//                Profile = user.Profile == null ? null : new UserProfileDto
-//                {
-//                    UserId = user.Profile.UserId,
-//                    FirstName = user.Profile.FirstName,
-//                    LastName = user.Profile.LastName
-//                }
-//            };
-//        }
-//    }
-//}
+            return new TaskDto
+            {
+                Id = user.Id,
+                Title = user.Title,
+                Description = user.Description,
+                CreatedAt = user.CreatedAt,
+                DueDate = user.DueDate,
+                UserId = user.UserId
+            };
+        }
+    }
+}

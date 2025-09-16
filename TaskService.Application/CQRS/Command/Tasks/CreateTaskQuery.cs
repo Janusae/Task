@@ -1,45 +1,50 @@
-﻿//using MediatR;
+﻿using MediatR;
+using TaskService.Application.Dto;
+using TaskService.Infrastructure.DbContexts;
 
-//namespace TaskService.Application.CQRS.Command.Tasks
-//{
-//    public class CreateUserCommand : IRequest<Guid>
-//    {
-//        public CreateUserDto CreateUserDto { get; set; } = default!;
-//    }
+namespace TaskService.Application.CQRS.Command.Tasks
+{
+    public class CreateTaskQuery : IRequest<Guid>
+    {
+        public CreateTaskDto CreateUserDto { get; set; } = default!;
+    }
 
-//    public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, Guid>
-//    {
-//        private readonly ProgramDbContext _dbContext;
+    public class CreateUserCommandHandler : IRequestHandler<CreateTaskQuery, Guid>
+    {
+        private readonly ProgramDbContext _dbContext;
+        private readonly HttpClient _httpClient;
 
-//        public CreateUserCommandHandler(ProgramDbContext dbContext)
-//        {
-//            _dbContext = dbContext;
-//        }
+        public CreateUserCommandHandler(ProgramDbContext dbContext, HttpClient httpClient)
+        {
+            _dbContext = dbContext;
+            _httpClient = httpClient;
+            _httpClient.BaseAddress = new Uri("https://localhost:7142");
+        }
 
-//        public async Task<Guid> Handle(CreateUserCommand requests, CancellationToken cancellationToken)
-//        {
-//            var userId = Guid.NewGuid();
-//            var request = requests.CreateUserDto;
-//            var user = new User
-//            {
-//                Id = userId,
-//                UserName = request.UserName,
-//                Email = request.Email,
-//                PasswordHash = request.Password, 
-//                CreatedAt = DateTime.UtcNow,
-//                UserRole = UserRole.User,
-//                Profile = new UserProfile
-//                {
-//                    UserId = userId,
-//                    FirstName = request.FirstName,
-//                    LastName = request.LastName
-//                }
-//            };
+        public async Task<Guid> Handle(CreateTaskQuery requests, CancellationToken cancellationToken)
+        {
+            var userId = Guid.NewGuid();
+            var request = requests.CreateUserDto;
+            var response = await _httpClient.GetAsync($"/api/Users/{userId}");
+            if (!response.IsSuccessStatusCode)
+                throw new Exception("Response is incorrect!");
 
-//            _dbContext.Users.Add(user);
-//            await _dbContext.SaveChangesAsync(cancellationToken);
+            var content = await response.Content.ReadAsStringAsync();
 
-//            return userId;
-//        }
-//    }
-//}
+            var Task = new Domain.DB.Sql.Task
+            {
+                Id = userId,
+                Title = request.Title,
+                Description = request.Description,
+                CreatedAt = DateTime.Now,
+                DueDate = request.DueDate,
+                UserId = request.UserId
+            };
+
+            _dbContext.Tasks.Add(Task);
+            await _dbContext.SaveChangesAsync(cancellationToken);
+
+            return userId;
+        }
+    }
+}

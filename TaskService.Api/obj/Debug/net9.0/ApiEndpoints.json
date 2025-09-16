@@ -19,7 +19,7 @@
     "Parameters": [
       {
         "Name": "request",
-        "Type": "System.Object",
+        "Type": "TaskService.Application.Dto.CreateTaskDto",
         "IsRequired": true
       }
     ],

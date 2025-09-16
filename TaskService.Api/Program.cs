@@ -13,6 +13,10 @@ builder.Services.AddDbContext<ProgramDbContext>(options =>
 {
     options.UseSqlServer("Server = . ; Database = TaskManagement  ; TrustServerCertificate = True ; Trusted_Connection = True ; ");
 });
+builder.Services.AddHttpClient("UserService", client =>
+{
+    client.BaseAddress = new Uri("https://localhost:7142");
+});
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblyContaining<GetTaskQuery>());
 var app = builder.Build();
 
