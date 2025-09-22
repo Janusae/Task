@@ -23,17 +23,28 @@ namespace TaskService.Application.CQRS.Command.Tasks
 
         public async Task<Guid> Handle(CreateTaskQuery requests, CancellationToken cancellationToken)
         {
-            var userId = Guid.NewGuid();
             var request = requests.CreateUserDto;
-            var response = await _httpClient.GetAsync($"/api/Users/{userId}");
+
+            // از UserId موجود در ورودی استفاده کن
+            var response = await _httpClient.GetAsync($"/api/Users");
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Response is incorrect!");
 
             var content = await response.Content.ReadAsStringAsync();
 
-            var Task = new Domain.DB.Sql.Task
+            // لیست رو دسیریالایز کن
+            var users = System.Text.Json.JsonSerializer.Deserialize<List<UserDto>>(content,
+                new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+            // چک کن کاربر وجود داره یا نه
+            var user = users?.FirstOrDefault(u => u.Id == request.UserId);
+            if (user is null)
+                throw new Exception("User not found in UserService");
+
+            // حالا تسک رو بساز
+            var task = new Domain.DB.Sql.Task
             {
-                Id = userId,
+                Id = Guid.NewGuid(),
                 Title = request.Title,
                 Description = request.Description,
                 CreatedAt = DateTime.Now,
@@ -41,10 +52,10 @@ namespace TaskService.Application.CQRS.Command.Tasks
                 UserId = request.UserId
             };
 
-            _dbContext.Tasks.Add(Task);
+            _dbContext.Tasks.Add(task);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return userId;
+            return task.Id;
         }
     }
 }
