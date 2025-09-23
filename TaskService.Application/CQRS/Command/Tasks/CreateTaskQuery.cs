@@ -4,12 +4,12 @@ using TaskService.Infrastructure.DbContexts;
 
 namespace TaskService.Application.CQRS.Command.Tasks
 {
-    public class CreateTaskQuery : IRequest<Guid>
+    public class CreateTaskQuery : IRequest<string>
     {
         public CreateTaskDto CreateUserDto { get; set; } = default!;
     }
 
-    public class CreateUserCommandHandler : IRequestHandler<CreateTaskQuery, Guid>
+    public class CreateUserCommandHandler : IRequestHandler<CreateTaskQuery, string>
     {
         private readonly ProgramDbContext _dbContext;
         private readonly HttpClient _httpClient;
@@ -21,27 +21,23 @@ namespace TaskService.Application.CQRS.Command.Tasks
             _httpClient.BaseAddress = new Uri("https://localhost:7142");
         }
 
-        public async Task<Guid> Handle(CreateTaskQuery requests, CancellationToken cancellationToken)
+        public async Task<string> Handle(CreateTaskQuery requests, CancellationToken cancellationToken)
         {
             var request = requests.CreateUserDto;
 
-            // از UserId موجود در ورودی استفاده کن
             var response = await _httpClient.GetAsync($"/api/Users");
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Response is incorrect!");
 
             var content = await response.Content.ReadAsStringAsync();
 
-            // لیست رو دسیریالایز کن
             var users = System.Text.Json.JsonSerializer.Deserialize<List<UserDto>>(content,
                 new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-            // چک کن کاربر وجود داره یا نه
-            var user = users?.FirstOrDefault(u => u.Id == request.UserId);
+            var user = users.FirstOrDefault(u => u.Id == request.UserId);
             if (user is null)
                 throw new Exception("User not found in UserService");
 
-            // حالا تسک رو بساز
             var task = new Domain.DB.Sql.Task
             {
                 Id = Guid.NewGuid(),
@@ -55,7 +51,7 @@ namespace TaskService.Application.CQRS.Command.Tasks
             _dbContext.Tasks.Add(task);
             await _dbContext.SaveChangesAsync(cancellationToken);
 
-            return task.Id;
+            return "You created a new Task!";
         }
     }
 }

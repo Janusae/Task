@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using Azure.Core;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using TaskService.Application.CQRS.Command.Tasks;
@@ -43,9 +44,10 @@ namespace TaskService.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        public async Task<IActionResult> Delete(Guid id)
         {
-            throw new NotImplementedException();
+            var result = await _mediator.Send(new DeleteTaskQuery { Id = id });
+            return Ok(result);
         }
     }
 }

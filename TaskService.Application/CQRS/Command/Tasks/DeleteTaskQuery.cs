@@ -1,36 +1,32 @@
-﻿//using MediatR;
-//using System;
-//using System.Collections.Generic;
-//using System.Linq;
-//using System.Text;
-//using System.Threading.Tasks;
-//using UserService.Infrastructure.DbContexts;
+﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
+using TaskService.Infrastructure.DbContexts;
 
-//namespace TaskService.Application.CQRS.Command.Tasks
-//{
-//    public class DeleteUserCommand : IRequest<string>
-//    {
-//        public Guid Id { get; set; }
-//    }
+namespace TaskService.Application.CQRS.Command.Tasks
+{
+    public class DeleteTaskQuery : IRequest<string>
+    {
+        public Guid Id { get; set; }
+    }
 
-//    public class DeleteUserCommandHandler : IRequestHandler<DeleteUserCommand, string>
-//    {
-//        private readonly ProgramDbContext _dbContext;
+    public class DeleteUserCommandHandler : IRequestHandler<DeleteTaskQuery, string>
+    {
+        private readonly ProgramDbContext _dbContext;
 
-//        public DeleteUserCommandHandler(ProgramDbContext dbContext)
-//        {
-//            _dbContext = dbContext;
-//        }
+        public DeleteUserCommandHandler(ProgramDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
 
-//        public async Task<string> Handle(DeleteUserCommand request, CancellationToken cancellationToken)
-//        {
-//            var user = await _dbContext.Users.FindAsync(new object[] { request.Id }, cancellationToken);
-//            if (user is null) throw new Exception("User not found");
+        public async Task<string> Handle(DeleteTaskQuery request, CancellationToken cancellationToken)
+        {
+            var task = await _dbContext.Tasks.FirstOrDefaultAsync(x => x.Id == request.Id, cancellationToken);
+            if (task is null) throw new Exception("task not found");
 
-//            _dbContext.Users.Remove(user);
-//            await _dbContext.SaveChangesAsync(cancellationToken);
+            _dbContext.Tasks.Remove(task);
+            await _dbContext.SaveChangesAsync(cancellationToken);
 
-//            return "User deleted successfully";
-//        }
-//    }
-//}
+            return "task deleted successfully";
+        }
+    }
+}
