@@ -25,16 +25,19 @@ namespace TaskService.Application.CQRS.Command.Tasks
         {
             var request = requests.CreateUserDto;
 
-            var response = await _httpClient.GetAsync($"/api/Users");
+            var response = await _httpClient.GetAsync($"/api/Users/{request.UserId}");
             if (!response.IsSuccessStatusCode)
                 throw new Exception("Response is incorrect!");
 
             var content = await response.Content.ReadAsStringAsync();
+            if (content == "") return "User not found!";
 
-            var users = System.Text.Json.JsonSerializer.Deserialize<List<UserDto>>(content,
-                new System.Text.Json.JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+            var user = System.Text.Json.JsonSerializer.Deserialize<UserDto>
+                (content, new System.Text.Json.JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
 
-            var user = users.FirstOrDefault(u => u.Id == request.UserId);
             if (user is null)
                 throw new Exception("User not found in UserService");
 
