@@ -37,10 +37,11 @@ namespace TaskService.Api.Controllers
             return Ok(result);
         }
 
-        [HttpPut("{id}")]
-        public IActionResult Update(Guid id, [FromBody] object request)
+        [HttpPut]
+        public async Task<IActionResult> Update([FromBody] UpdateTaskDto request)
         {
-            throw new NotImplementedException();
+            var result = await _mediator.Send(new UpdateTaskQuery { UpdateTaskDto = request });
+            return Ok(result);
         }
 
         [HttpDelete("{id}")]

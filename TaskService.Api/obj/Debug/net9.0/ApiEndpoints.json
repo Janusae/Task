@@ -27,6 +27,22 @@
   },
   {
     "ContainingType": "TaskService.Api.Controllers.TasksController",
+    "Method": "Update",
+    "RelativePath": "api/Tasks",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "TaskService.Application.Dto.UpdateTaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TaskService.Api.Controllers.TasksController",
     "Method": "GetById",
     "RelativePath": "api/Tasks/{id}",
     "HttpMethod": "GET",
@@ -36,27 +52,6 @@
       {
         "Name": "id",
         "Type": "System.Guid",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TaskService.Api.Controllers.TasksController",
-    "Method": "Update",
-    "RelativePath": "api/Tasks/{id}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "id",
-        "Type": "System.Guid",
-        "IsRequired": true
-      },
-      {
-        "Name": "request",
-        "Type": "System.Object",
         "IsRequired": true
       }
     ],
