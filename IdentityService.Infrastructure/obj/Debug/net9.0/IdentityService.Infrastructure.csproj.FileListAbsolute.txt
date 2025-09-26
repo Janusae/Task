@@ -1,0 +1,12 @@
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\bin\Debug\net9.0\IdentityService.Infrastructure.deps.json
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\bin\Debug\net9.0\IdentityService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\bin\Debug\net9.0\IdentityService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.AssemblyInfo.cs
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.sourcelink.json
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\refint\IdentityService.Infrastructure.dll
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\IdentityService.Infrastructure.pdb
+C:\Users\Mohammad\source\repos\TaskManagement\IdentityService.Infrastructure\obj\Debug\net9.0\ref\IdentityService.Infrastructure.dll
